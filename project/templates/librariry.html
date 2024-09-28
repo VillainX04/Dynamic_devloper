@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #ffa500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('image.1.png') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            padding-top: 150px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+        }
+
+        .hero p {
+            font-size: 24px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffa500;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .cta:hover {
+            background-color: #333;
+            color: #ffa500;
+        }
+
+        /* Catalog Section */
+        .catalog {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .catalog h2 {
+            margin-bottom: 20px;
+        }
+
+        .books {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .book {
+            background-color: white;
+            padding: 15px;
+            width: 200px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .book img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .book h3 {
+            margin-top: 10px;
+        }
+
+        .book p {
+            color: #555;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact label {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #ffa500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #hero {
+            background-image: 'image.1.png';
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+
+
+
+
+
+
+
+                </div>
+                </button>
+            </ul>
+        </nav>
+
+
+
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to the E-Library</h1>
+        <p>Discover thousands of books online!</p>
+        <a href="#catalog" class="cta">Browse Catalog</a>
+    </section>
+
+    <!-- Book Catalog -->
+    <section id="catalog" class="catalog">
+        <h2>Book Catalog</h2>
+        <div class="books">
+            <div class="book">
+                <img src="book1.jpg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author: John Doe</p>
+            </div>
+            <div class="book">
+                <img src="book2.jpg" alt="Book 2">
+                <h3>Book Title 2</h3>
+                <p>Author: Jane Doe</p>
+            </div>
+            <div class="book">
+                <img src="book3.jpg" alt="Book 3">
+                <h3>Book Title 3</h3>
+                <p>Author: Mark Smith</p>
+            </div>
+            <!-- Add more books as needed -->
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are an online library offering thousands of books from various genres. Whether you love fiction,
+            non-fiction, academic books, or children's books, we have something for everyone.</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

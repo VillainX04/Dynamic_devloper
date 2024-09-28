@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library | Login</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+            /* Background color set to white */
+            color: black;
+            /* Text color set to black */
+        }
+
+        /* Header/Navbar */
+        header {
+            width: 100%;
+            background-color: black;
+            /* Navbar background color */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            /* Padding for navbar */
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-list li a {
+            color: white;
+            /* Navbar text color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Head Section */
+        .head {
+            text-align: center;
+            /* Center text in head */
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: black;
+            /* Color for heading */
+            font-size: 60px;
+            font-weight: 900;
+        }
+
+        h2 {
+            color: gray;
+            /* Color for subheading */
+        }
+
+        /* Login Section */
+        .login-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Dark background for login */
+            color: white;
+            /* White text */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            /* Full width input */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            /* Full width button */
+            padding: 10px;
+            background-color: #ff4800de;
+            /* Button color */
+            color: white;
+            /* Button text color */
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            /* Margin for spacing */
+        }
+
+        button:hover {
+            background-color: rgba(211, 50, 25, 0.555);
+            /* Button hover color */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            /* Footer background color */
+            color: white;
+            /* Footer text color */
+            width: 100%;
+            position: relative;
+        }
+
+        a:visited {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Head Section -->
+    <div class="head">
+        <h1 align="center"><b>E-Library</b><br><a id="s1">Your Digital Book Hub</a></h1>
+        <h2 align="center">Knowledge at your fingertips.</h2>
+    </div>
+
+    <!-- Login Form -->
+    <center>
+        <section id="login" class="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="mobile" placeholder="Mobile no." maxlength="10" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <button><a href="signup.html">Create Account</a></button></p>
+            <br>
+            <button id="back" onclick="window.location.href='index.html'">Go to Home</button>
+        </section>
+    </center>
+
+    <footer>
+        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

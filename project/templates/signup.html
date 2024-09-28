@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library | Create Account</title>
+    <link rel="stylesheet" href="login.css"> <!-- Reusing the same CSS -->
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Head Section -->
+    <div class="head">
+        <h1 align="center"><b>E-Library</b><br><a id="s1">Your Digital Book Hub</a></h1>
+        <h2 align="center">Create your account now.</h2>
+    </div>
+
+    <!-- Create Account Form -->
+    <center>
+    <section id="signup" class="login-section">
+        <h2>Create Account</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email ID" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="contact" placeholder="Contact No." maxlength="10" required>
+            </div>
+            <button type="submit">Join</button>
+        </form>
+        <p>Already have an account? <button><a href="login.html">Login</a></button></p>
+        <br>
+        <button id="back" onclick="window.location.href='index.html'">Go to Home</button>
+    </section>
+    </center>
+
+    <footer>
+        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

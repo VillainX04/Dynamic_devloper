@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-Library</title>
+    <style>
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .book-cover {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the E-Library</h1>
+
+    <div class="book-grid">
+        {% for book in books %}
+        <div class="book-card">
+            <img src="{{ book.image_url }}" alt="{{ book.title }} cover" class="book-cover">
+            <h2>{{ book.title }}</h2>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Book ID:</strong> {{ book.book_id }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        header {
+            color: #fff;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            margin-left: 40px;
+        }
+
+        .nav-list li {
+            margin-right: 20px;
+            padding: 3px;
+            margin-top: 10px;
+        }
+
+        .nav-list li a {
+            color: #050505c5;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .nav-list li a:hover {
+            color: #000000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* My Account Button */
+        .account-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .account-btn {
+            background-color: #ffffff;
+            color: #0d0d0d;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: box-shadow 0.3s ease; /* Transition for shadow */
+        }
+
+        .account-btn:hover {
+            color: #000000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 20px;
+            color: #fff7f7;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero .cta {
+            background-color: #333;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fffdfd;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: box-shadow 0.3s ease; /* Transition for shadow */
+            margin-top: 20px;
+        }
+
+        .hero .cta:hover {
+            background-color: #444;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+        }
+
+        /* Book Catalog */
+        .catalog {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .catalog h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .books {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .book {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .book h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .book p {
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .back {
+            background-image: url("pexels-photo-12064.jpeg.jpg");
+            height: 93vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <div class="nav1">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="upload.html">Upload Book</a></li>
+                    </ul>
+                </div>
+                <div class="account-menu">
+                    <button class="account-btn" onclick="openAccount()">My Account</button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Welcome to the EduShelf</h1>
+            <a href="catalog.html" class="cta">Browse Catalog</a>
+        </section>
+
+    </div>
+    <footer>
+        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
