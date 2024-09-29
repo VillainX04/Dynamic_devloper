@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Library - Catalog</title>
     <style>
-                /* Basic Styles */
+        /* Basic Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -96,6 +97,12 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: calc(25% - 20px);
+            /* Adjusting for margins/padding */
+            margin: 10px;
+            /* Add some margin between items */
+            box-sizing: border-box;
+            /* Ensures padding/margin are included in width */
         }
 
         .book img {
@@ -103,6 +110,12 @@
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
+        }
+
+        .book:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            /* Shadow on hover */
+            transition: box-shadow 0.5s ease;
         }
 
         .book h3 {
@@ -182,6 +195,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <header>
@@ -190,7 +204,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="upload.html">Upload Book</a></li>
             </ul>
         </nav>
     </header>
@@ -233,44 +246,76 @@
             </select>
         </div>
 
-    </div>
+        </div>
 
-    <!-- Books Section -->
-    <div class="books">
-        <div class="book" data-category="fiction">
-            <img src="WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg" alt="Book 1">
-            <h3>Book Title 1</h3>
-            <p>Author: John Doe</p>
-            <p>Category: Fiction</p>
-        </div>
-        <div class="book" data-category="non-fiction">
-            <img src="WhatsApp Image 2024-09-28 at 17.23.51_76772390.jpg" alt="Book 2">
-            <h3>Book Title 2</h3>
-            <p>Author: Jane Doe</p>
-            <p>Category: Non-fiction</p>
-        </div>
-        <div class="book" data-category="academic">
-            <img src="WhatsApp Image 2024-09-28 at 17.23.53_832c7dc0.jpg" alt="Book 3">
-            <h3>Book Title 3</h3>
-            <p>Author: Mark Smith</p>
-            <p>Category: Academic</p>
-        </div>
-        <div class="book" data-category="children">
-            <img src="WhatsApp Image 2024-09-28 at 17.23.56_f159f39c.jpg" alt="Book 4">
-            <h3>Book Title 4</h3>
-            <p>Author: Lisa Brown</p>
-            <p>Category: Children's Books</p>
-        </div>
-       
-        <!-- Add more books with appropriate data-category -->
-    </div>
+        <!-- Books Section -->
+        <div class="books">
+            <div class="book" data-category="fiction">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 1">
+                <h3>The Alchemist</h3>
+                <p>Author: Paulo Coelho</p>
+                <p>Category: Magical Realism</p>
+            </div>
+            <div class="book" data-category="non-fiction">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 2">
+                <h3>To Kill a Mokingbird</h3>
+                <p>Author: Harper Lee</p>
+                <p>Category: Fiction</p>
+            </div>
+            <div class="book" data-category="academic">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 3">
+                <h3>Adventure Shuckle</h3>
+                <p>Author:  Pokémon Comic Series</p>
+                <p>Category: Fan Fiction </p>
+            </div>
+            <div class="book" data-category="children">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 4">
+                <h3>Python With ML</h3>
+                <p>Author: Lisa Brown</p>
+                <p>Category: Coding(Education)</p>
+            </div>
+
+            <div class="book" data-category="children">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 4">
+                <h3>C Language</h3>
+                <p>Author: Lisa Brown</p>
+                <p>Category: Coding(Education)</p>
+            </div>
+
+            <div class="book" data-category="children">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 4">
+                <h3>MY NAME</h3>
+                <p>Author: Lisa Brown</p>
+                <p>Category: Love Story</p>
+            </div>
+
+            <div class="book" data-category="children">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 4">
+                <h3>Your Name</h3>
+                <p>Author: Charlie Doe</p>
+                <p>Category: -</p>
+            </div>
+
+            <div class="book" data-category="children">
+                <img src='{{ url_for("static", filename="images/WhatsApp Image 2024-09-28 at 17.23.44_721582d6.jpg") }}'
+                    alt="Book 4">
+                <h3>Her</h3>
+                <p>Author: Roy Doe</p>
+                <p>Category: Comic</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+        <p>&copy; 2024 EduShelf. All Rights Reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
