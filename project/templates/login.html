@@ -18,14 +18,14 @@
             min-height: 100vh;
             background-color: white;
             /* Background color set to white */
-            color: black;
+            color: #333;
             /* Text color set to black */
         }
 
         /* Header/Navbar */
         header {
             width: 100%;
-            background-color: black;
+            background-color: #333;
             /* Navbar background color */
         }
 
@@ -47,6 +47,13 @@
             /* Navbar text color */
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+            /* Transition for hover effect */
+        }
+
+        .nav-list li a:hover {
+            color: #ffeb3b9e;
+            /* Change color on hover */
         }
 
         /* Head Section */
@@ -57,27 +64,58 @@
         }
 
         h1 {
-            color: black;
-            /* Color for heading */
-            font-size: 60px;
-            font-weight: 900;
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+            /* Initial text shadow */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            /* Transition for hover */
+        }
+
+        h1:hover {
+            color: #ffeb3b;
+            /* Change text color to a highlight (yellow in this case) */
+            text-shadow: 3px 6px 10px rgba(0, 0, 0, 0.7);
+            /* Intensify the shadow on hover */
         }
 
         h2 {
-            color: gray;
-            /* Color for subheading */
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 6px rgba(245, 245, 245, 0.373);
+            /* Initial text shadow */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            /* Transition for hover */
+            color: whitesmoke;
+        }
+
+
+        h2:hover {
+            color: #ffeb3b9e;
+            /* Change text color to a highlight (yellow in this case) */
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+            /* Intensify the shadow on hover */
         }
 
         /* Login Section */
         .login-section {
             background-color: rgba(0, 0, 0, 0.7);
-            /* Dark background for login */
+            /* Blue background for login */
+            /* Adjust transparency if needed */
             color: white;
             /* White text */
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Add shadow */
             width: 300px;
+            transition: box-shadow 0.3s ease;
+            /* Transition for shadow on hover */
+        }
+
+        .login-section:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            /* Shadow on hover */
         }
 
         .form-group {
@@ -106,27 +144,34 @@
             cursor: pointer;
             margin-top: 10px;
             /* Margin for spacing */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            /* Transition for hover effects */
         }
 
         button:hover {
-            background-color: rgba(211, 50, 25, 0.555);
+            background-color: rgba(211, 50, 25, 0.8);
             /* Button hover color */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Shadow on hover */
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: black;
-            /* Footer background color */
-            color: white;
-            /* Footer text color */
-            width: 100%;
-            position: relative;
+        /* Link Styles */
+        a {
+            text-decoration: none;
+            /* Remove underline */
+            color: rgb(11, 11, 11);
+            /* White text color */
+            transition: color 1s ease;
+            /* Transition for hover effect */
+        }
+
+        a:hover {
+            color: #ffeb3b9e;
+            /* Change color on hover */
         }
 
         a:visited {
-            color: black;
+            color: whitesmoke;
         }
     </style>
 </head>
@@ -136,41 +181,39 @@
     <header>
         <nav class="navbar">
             <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('catalog') }}">Catalog</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Head Section -->
     <div class="head">
-        <h1 align="center"><b>E-Library</b><br><a id="s1">Your Digital Book Hub</a></h1>
-        <h2 align="center">Knowledge at your fingertips.</h2>
+        <h1 align="center"><b>EduShelf</b><h1>Your Digital Book Hub</h1>
     </div>
 
     <!-- Login Form -->
     <center>
         <section id="login" class="login-section">
             <h2>Login</h2>
-            <form id="login-form">
+            <form id="login-form" action="{{ url_for('login') }}" method="POST">
                 <div class="form-group">
-                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="text" name="email" id="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="mobile" placeholder="Mobile no." maxlength="10" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="mobile_no" id="mobile_no" name="mobile_no" placeholder="Mobile No" required>
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <button><a href="signup.html">Create Account</a></button></p>
+            <p>Don't have an account? <button><a href="{{ url_for('signup') }}">Create Account</a></button></p>
             <br>
-            <button id="back" onclick="window.location.href='index.html'">Go to Home</button>
+            <div class="button"><a href="{{ url_for('index') }}">Go To Home</a></div>
         </section>
     </center>
-
-    <footer>
-        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
-    </footer>
 </body>
 
 </html>
