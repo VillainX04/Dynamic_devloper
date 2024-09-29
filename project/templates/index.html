@@ -50,40 +50,18 @@
         }
 
         .nav-list li a:hover {
-            color: #000000;
+            color: rgb(0, 0, 0);
+            /* Change color on hover */
+            text-shadow: 2px 4px 6px rgba(245, 245, 245, 0.373);
+            /* Initial text shadow */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            /* Transition for hover */
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        /* My Account Button */
-        .account-menu {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-right: 20px;
-            margin-top: 20px;
-        }
-
-        .account-btn {
-            background-color: #ffffff;
-            color: #0d0d0d;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-            transition: box-shadow 0.3s ease; /* Transition for shadow */
-        }
-
-        .account-btn:hover {
-            color: #000000;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
         }
 
         /* Hero Section */
@@ -98,7 +76,19 @@
         .hero h1 {
             font-size: 50px;
             margin-bottom: 20px;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+            /* Initial text shadow */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            /* Transition for hover */
         }
+
+        .hero h1:hover {
+            color: #ffeb3b;
+            /* Change text color to a highlight (yellow in this case) */
+            text-shadow: 3px 6px 10px rgba(0, 0, 0, 0.7);
+            /* Intensify the shadow on hover */
+        }
+
 
         .hero .cta {
             background-color: #333;
@@ -107,14 +97,17 @@
             color: #fffdfd;
             text-decoration: none;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-            transition: box-shadow 0.3s ease; /* Transition for shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Shadow effect */
+            transition: box-shadow 0.3s ease;
+            /* Transition for shadow */
             margin-top: 20px;
         }
 
         .hero .cta:hover {
             background-color: #444;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            /* Shadow on hover */
         }
 
         /* Book Catalog */
@@ -172,8 +165,72 @@
         }
 
         .back {
-            background-image: url("pexels-photo-12064.jpeg.jpg");
+            background-image: url('{{ url_for("static", filename="images/pexels-photo-12064.jpg") }}');
             height: 93vh;
+        }
+
+        .profile-button {
+            background-color: #ffffff;
+            color: #0d0d0d;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Shadow effect */
+            transition: box-shadow 0.3s ease;
+            /* Transition for shadow */
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Profile-Container*/
+        .profile-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .profile-button:hover {
+            color: #000000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            /* Shadow on hover */
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        /* Dropdown menu (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            background-color: #f1f1f1a1;
+            color: #000000;
+        }
+
+        /* Each item in the dropdown */
+        .dropdown-content a {
+            color: #000000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for the dropdown items */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #000000;
+            transition: color 0.3s ease, text-shadow 1s ease;
+        }
+
+        /* Show the dropdown content on hover */
+        .profile-container:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
@@ -182,19 +239,28 @@
     <div class="back">
         <header>
             <nav>
-                <div class="logo">
-                    <img src="" alt="">
-                </div>
                 <div class="nav1">
                     <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="catalog.html">Catalog</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="upload.html">Upload Book</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('catalog') }}">Catalog</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
                     </ul>
                 </div>
-                <div class="account-menu">
-                    <button class="account-btn" onclick="openAccount()">My Account</button>
+                <!-- <div class="account-menu">
+                    <button class="account-btn">My Account</button>
+                </div> -->
+
+                <div class="profile-container">
+                    <!-- Profile button -->
+                    <button class="profile-button">Profile</button>
+
+                    <!-- Dropdown content (details like username, email, etc.) -->
+                    <div class="dropdown-content">
+                        <a href="#">Username: Vishal Dadaresa</a>
+                        <a href="#">Email: vishalxyz23@gmail.com</a>
+                        <a href="#">Mobile: +91 9974719568</a>
+                        <a href="#">Logout</a>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -202,12 +268,12 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>Welcome to the EduShelf</h1>
-            <a href="catalog.html" class="cta">Browse Catalog</a>
+            <a href="{{ url_for('catalog') }}" class="cta">Browse Catalog</a>
         </section>
 
     </div>
     <footer>
-        <p>&copy; 2024 E-Library. All Rights Reserved.</p>
+        <p>&copy; 2024 EduShelf. All Rights Reserved.</p>
     </footer>
 </body>
 
